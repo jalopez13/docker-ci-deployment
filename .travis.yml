@@ -5,3 +5,12 @@ services:
 scripts:
   - docker build -t jalopez13/node .
   - docker images jalopez13/node
+
+before_deploy:
+  - docker login -u jalopez13 -p @Starfire13
+
+deploy:
+  provider: script
+  script: docker push jalopez13/node
+  on:
+    branch: master
