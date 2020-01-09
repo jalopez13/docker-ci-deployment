@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+scripts:
+  - docker build -t jalopez13/node .
+  - docker images jalopez13/node
